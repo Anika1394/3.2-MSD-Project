@@ -64,3 +64,71 @@ same purpose in our project.
 rate.
 - Logic-state: Used to take as pulse in our project.
 - DHT22 sensor: The DHT22 sensor is used to measure room temperature and humidity in our project.
+
+
+## Working Flow
+The flow of working is discussed below:
+- The DHT22 sensor which is used in home appliances and consumer
+products for measuring temperature and humidity values. It is one of
+the most important sensors, in medical units to detect the humidity
+values in isolation unit of patients. As soon as the power is turned
+on, the DHT22 sensor will sense the temperature and humidity of
+room and show it in the 20x4 LCD monitor. It will also show the
+humidity and temperature is favorable for patient’s health or not.
+- Medicines will be pre-loaded by the user to the corresponding pill
+box(day/noon/night).User can set the time by using keypad to give
+input and RTC module will set the time for alarm.The time set for
+notification will be displayed on the LCD.
+
+- There are 1 keypad and 3 LCDs for taking input and showing the it
+for alarm in our project. After running the project 1st LCD will ask
+”Want to set alarm?” and there are two options: 1.Yes 2.No . If we
+press 2 The 1st LCD will go off/clear and 2nd LCD will work like the
+1st one. If we press 1 then it will show ”Set Alarm:” and a format
+will show like ”88:88”. We can set our alarm here. For hour’s 1st
+digit if we press 0/1/2 button it will show on lcd. but 3/4/5/6/7/8/9
+won’t show up although we press it in keypad as hour’s 1st digit can
+be greater than 2. for hour’s 2nd digit there are two conditions. If
+it is 0/1 then it will take 0-9. but if the 1st digit is 2 then it will
+only take 0-3 although other key’s are pressed. because 23 is the
+last valid hour. For minute, the 1st digit can be 0-5. other keys
+won’t work. because 59 is the last valid minute. for minute’s 2nd
+digit 0-9 will be allowed. we are using string for digits. The strings
+are converted to integer when they are put in the array. There will
+be 1 array for keeping the track of hours for 3 lcds and 1 array for
+keeping the track of minutes for 3 lcds . There are two additional
+feature during the time of taking input. when a person starts to set
+alarm and press key, if he set wrong key then he can press ”-” button
+then it will go to ”initialization”. that means ”88:88” will show up
+again for that lcd. if one press ”=” during setting alarm then it will
+go to ”set option”. that means again it will ask ”want to set time?
+1.yes 2.no”. Then user can again choose it according to his demand.
+After an action is done for lcd 1 same things will happen to lcd 2.
+And after an action is taken for lcd 2 same things will happen for
+lcd 3. after taking actions for the 3 lcds one can press ”on” button
+on the keyboard and it will start work from the beginning of 1st
+lcd and onwards.User can use this feature if he wants to change his
+alarm time. The buzzer will start to buzz during the alarm time.
+the alarm is matched with real time clock using RTC. Description of
+using RTC is discussed below.
+- When the time set for alarm matches with the real time clock ,a
+notification will be given by ringing the buzzer and the LED of the
+corresponding pill box will be lighten up for 1 minute. RTC module
+will set the time for alarm.
+- Along with buzzer and LED,the cover of the specific pill box will
+open by the servo motor.The push button attached with the servo
+motor will help it to move the wheel backward and open the box
+cover.
+
+- There will be a ultrasonic sensor on the top of each box.While the
+alarm is running if the distance between patient and box is reduced(less than or equal 4cm), then the pin of the buzzer and LED
+will get a LOW value and alarm will off.If the distance of patient
+and box is not reduced and it is greater than 4 cm then the buzzer
+and LED will give alarm for 3 times with a time laps of 2 minutes.
+- The heartbeat sensor starts with pressing a push button. After pressing the push button, time-count starts and the sensor take pulse from
+patient’s finger. The 20x4 LCD will show the time in second, the
+pulse taken from patient’s finger will be shown in the LCD monitor.
+After 10 seconds, the patient can see his/her pulse rate per minute.
+Because the pulse rate of 10 seconds will be multiplied with 6 and
+provide the result on the basis of minute.
+
