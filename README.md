@@ -17,6 +17,10 @@ also needs to know his/her pulse rate. Pulse rate indicates the strength
 of the pulse. Our Medi-minder will serve these purposes for patients to
 ensure healthy life.
 
+### Installation for Simulation
+- Proteus 8 Professional
+- Arduino
+
 ### Required Components
 These following parts and tools are required for building this project
 - Arduino Mega 2560: The Arduino MEGA 2560 can be used to design for projects that require more I/O lines, more sketch memory and more RAM. With 54 digital I/O pins, 16 analog inputs and
